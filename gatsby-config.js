@@ -67,20 +67,15 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ørn forlag | Utgiver av bøker `,
+        name: `Ørn forlag | Utgiver av bøker om Norsk natur og kultur `,
         short_name: `ornforlag.no`,
         start_url: `/`,
-        icons:  {
-               src: `src/images/ornforlag-icon.png",
-               purpose: `src/images/maskable_icon1.png`,
-               }
+        icon: `src/images/ornforlag-icon.png`,
         background_color: `#f3f4f6`,
         theme_color: `#305363`,
         display: `minimal-ui`,
-       
-      },
+     },
     },
-"icons": 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     `gatsby-plugin-offline`,
