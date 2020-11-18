@@ -5,7 +5,7 @@ module.exports = {
       related: "Related",
     },
     frontpage: {
-      title: "Κεντρική",
+      title: "home",
     },
     product: {
       noVariants: "This product has no variants",
@@ -20,7 +20,7 @@ module.exports = {
     },
     layout: {
       builtWith: "Built with {{- link}}",
-      poweredBy: "Powered by {{- link}}",
+      poweredBy: "And by {{- link}}",
       searchPlaceholder: "Search",
     },
     search: {

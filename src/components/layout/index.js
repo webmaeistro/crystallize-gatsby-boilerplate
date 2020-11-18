@@ -16,21 +16,37 @@ const Layout = ({ headerItems, children, title }) => {
   const t = useT()
 
   return (
-    <IntlProvider locale="nb">
-      <SEO title={title} /> <Header headerItems={headerItems} />{" "}
-      <main> {children} </main>{" "}
-      <footer style={{ margin: "2rem 0" }}>
+    <>
+      <GlobalStyle />
+      <SEO title={title} />
+      <Header headerItems={headerItems} />
+      <main>{children}</main>
+      <footer style={{ margin: "4rem 0 2rem", textAlign: "center" }}>
         <Outer>
-          <strong>Ørn forlag</strong> Veståsen 4,1362 Hosle,Norway.<br></br>
-          Tlf.: (+47) 909 60 404 | Mail: bjorn[@]ornforlag.no | Org.nr.:
-          994304399 MVA | Kontonr.: 9235.27.10220 Nettside av: {` `}{" "}
-          <a href="https://martin-andersen.netlify.app"> Martin Andersen </a>{" "}
-          {` `} | Laget med {` `}{" "}
-          <a href="https://www.gatsbyjs.org"> Gatsbyjs </a> og{" "}
-          <a href="https://www.crystallize.com ">Crystallize</a>{" "}
-        </Outer>{" "}
-      </footer>{" "}
-    </IntlProvider>
+          <div>
+            {" "}
+            <strong>Ørn forlag</strong> Veståsen 4,1362 Hosle,Norway.<br></br>
+            Tlf.: (+47) 909 60 404 | Mail: bjorn[@]ornforlag.no | Org.nr.:
+            994304399 MVA | Kontonr.: 9235.27.10220{" "}
+          </div>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t("layout.builtWith", {
+                link: `<a href="https://www.gatsbyjs.org">Gatsby</a>`,
+              }),
+            }}
+          />
+          {` `}|{` `}
+          <span
+            dangerouslySetInnerHTML={{
+              __html: t("layout.poweredBy", {
+                link: `<a href="https://github.com/webmaeistro">Martin Andersen</a>`,
+              }),
+            }}
+          />
+        </Outer>
+      </footer>
+    </>
   )
 }
 

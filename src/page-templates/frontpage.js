@@ -56,7 +56,7 @@ export const query = graphql`
 
       frontpage: catalogue(
         language: $crystallizeCatalogueLanguage
-        path: "/web-frontpage"
+        path: "/_web-frontpage"
       ) {
         components {
           content {

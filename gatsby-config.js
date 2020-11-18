@@ -18,22 +18,6 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Oswald`,
-            subsets: [`latin`],
-          },
-          {
-            family: `Open Sans`,
-            variants: [`400`, `700`],
-          },
-        ],
-      },
-    },
-
     "gatsby-plugin-styled-components",
     {
       resolve: `gatsby-plugin-react-helmet-canonical-urls`,
@@ -65,7 +49,7 @@ module.exports = {
         background_color: `#f3f4f6`,
         theme_color: `#305363`,
         display: `minimal-ui`,
-     },
+      },
     },
     {
       resolve: "gatsby-source-graphql",

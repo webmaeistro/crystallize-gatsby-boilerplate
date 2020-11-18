@@ -20,7 +20,7 @@ module.exports = {
     },
     layout: {
       builtWith: "Bygget med {{- link}}",
-      poweredBy: "Kjører på {{- link}}",
+      poweredBy: "Laget av {{- link}}",
       searchPlaceholder: "Søk",
     },
     search: {

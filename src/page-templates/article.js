@@ -2,9 +2,9 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import { Outer, H1, Header } from "ui"
-import Layout from "components/layout"
-import ShapeComponents from "components/shape-components"
+import { Outer, H1, Header } from "../ui"
+import Layout from "../components/layout"
+import ShapeComponents from "../components/shape-components"
 
 const Document = styled(Header)`
   max-width: 700px;
@@ -60,7 +60,7 @@ export default DocumentPage
 export const query = graphql`
   query getArticle($path: String!) {
     crystallize {
-      headerItems: catalogue(language: "en", path: "/") {
+      headerItems: catalogue(language: "en", path: "/utgivelser") {
         children {
           name
           path

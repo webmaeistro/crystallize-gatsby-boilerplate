@@ -22,7 +22,7 @@ function Results({ edges, pageInfo, navigate }) {
               (pv) => pv.identifier === locale.priceVariant
             ) || {
               price: matchingVariant?.price || "n/a",
-              currency: "eur",
+              currency: "NOK",
             }
 
             return (

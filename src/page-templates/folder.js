@@ -2,12 +2,12 @@ import React from "react"
 import styled from "styled-components"
 import { graphql } from "gatsby"
 
-import { Outer as O, Header, H1, responsive } from "ui"
+import { Outer as O, Header, H1, responsive } from "../ui"
 
-import Layout from "components/layout"
-import Grid, { GridItem } from "components/grid"
-import ShapeComponents from "components/shape-components"
-import ItemMicroformat from "components/item-microformat"
+import Layout from "../components/layout"
+import Grid, { GridItem } from "../components/grid"
+import ShapeComponents from "../components/shape-components"
+import ItemMicroformat from "../components/item-microformat"
 export const Outer = styled(O)`
   padding: 0px 75px;
   max-width: 1600px;

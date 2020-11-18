@@ -1,13 +1,13 @@
 import React from "react"
 import { graphql } from "gatsby"
-import ContentTransformer from "ui/content-transformer"
-import ItemMicroformat from "components/item-microformat"
-
-import { H1, Header } from "ui"
-import Layout from "components/layout"
-import ShapeComponents from "components/shape-components"
+import ContentTransformer from "../../ui/content-transformer"
+import ItemMicroformat from "../../components/item-microformat"
+import Document from "../../components/item-microformat/document-item"
+import { H1, Header } from "../../ui"
+import Layout from "../../components/layout"
+import ShapeComponents from "../../components/shape-components"
 import { HeroImage, Img, List, H2, Related, Outer } from "./styles"
-import { useT } from "lib/i18n"
+import { useT } from "../../lib/i18n"
 
 const DocumentPage = (props) => {
   const { data } = props
@@ -36,8 +36,8 @@ const DocumentPage = (props) => {
           <H1>{title}</H1>
           <ContentTransformer {...description?.content?.json} />
         </Header>
-        <HeroImage>
-          {images?.content?.images?.map((img, i) => (
+        <HeroImage
+          {...images?.content?.images?.map((img, i) => (
             <Img
               key={img.url}
               {...img}
@@ -45,7 +45,7 @@ const DocumentPage = (props) => {
               sizes={i > 0 ? "40vw" : "80vw"}
             />
           ))}
-        </HeroImage>
+        />
         <ShapeComponents components={componentsRest} />
       </Outer>
       {relatedProducts?.content?.items?.length && (
@@ -62,7 +62,7 @@ const DocumentPage = (props) => {
           </List>
         </Related>
       )}
-      {/* <Outer>
+      <Outer>
         <Document>
           <ShapeComponents
             components={article.components}
@@ -71,7 +71,7 @@ const DocumentPage = (props) => {
             }}
           />
         </Document>
-      </Outer> */}
+      </Outer>
     </Layout>
   )
 }
@@ -79,7 +79,7 @@ const DocumentPage = (props) => {
 export default DocumentPage
 
 export const query = graphql`
-  query getArticle(
+  query getArticleandGetArticle(
     $cataloguePath: String!
     $crystallizeCatalogueLanguage: String!
   ) {

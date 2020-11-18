@@ -13,7 +13,7 @@ export default function BuyButton({ product, selectedVariant }) {
     (pv) => pv.identifier === locale.priceVariant
   ) || {
     price: "n/a",
-    currency: "eur",
+    currency: "NOK",
   }
 
   return (
