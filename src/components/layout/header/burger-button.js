@@ -13,14 +13,15 @@ const Outer = styled.button.attrs(() => ({
   width: 40px;
   height: 40px;
   position: absolute;
-  margin-right: 15px;
-  margin-top: 5px;
+  top: calc(50% - 20px);
   right: 15px;
+  margin-right: 15px;
   z-index: 100;
   padding: 0;
 
   ${responsive.smAndLess} {
     display: block;
+    margin-right: 5px;
   }
 `
 

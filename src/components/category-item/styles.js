@@ -1,13 +1,8 @@
 import styled from "styled-components"
-import Image from "@crystallize/react-image"
-import { Link } from "gatsby"
+import { Image } from "@crystallize/react-image"
 
+import Link from "components/link"
 import { colors, responsive } from "ui"
-
-export const imageSize = {
-  lg: "300px",
-  xs: "150px",
-}
 
 export const ProductOuter = styled(Link)`
   display: flex;

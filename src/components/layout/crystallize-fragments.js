@@ -9,22 +9,20 @@ export const query = graphql`
     url
     altText
     variants {
+      key
       url
       width
+      height
     }
   }
   fragment crystallize_video on CRYSTALLIZE_Video {
     title
     playlists
     thumbnails {
-      key
-      url
-      variants {
-        url
-        width
-      }
+      ...crystallize_image
     }
   }
+
   fragment crystallize_imageContent on CRYSTALLIZE_ImageContent {
     images {
       ...crystallize_image
@@ -41,6 +39,15 @@ export const query = graphql`
 
   fragment crystallize_richTextContent on CRYSTALLIZE_RichTextContent {
     json
+  }
+  fragment crystallize_propertiesTableContent on CRYSTALLIZE_PropertiesTableContent {
+    sections {
+      title
+      properties {
+        key
+        value
+      }
+    }
   }
 
   fragment crystallize_paragraphCollectionContent on CRYSTALLIZE_ParagraphCollectionContent {
@@ -60,11 +67,44 @@ export const query = graphql`
     }
   }
 
+  fragment crystallize_gridRelations on CRYSTALLIZE_GridRelationsContent {
+    grids {
+      name
+      rows {
+        columns {
+          layout {
+            rowspan
+            colspan
+          }
+          itemType
+          itemId
+          item {
+            id
+            name
+            path
+            type
+            language
+            ...crystallize_product
+            components {
+              name
+              type
+              content {
+                ...crystallize_imageContent
+                ...crystallize_videoContent
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   fragment crystallize_item on CRYSTALLIZE_Item {
     id
     name
     type
     path
+    language
     topics {
       name
       children {
@@ -87,12 +127,15 @@ export const query = graphql`
         ...crystallize_imageContent
         ...crystallize_videoContent
         ...crystallize_paragraphCollectionContent
+        ...crystallize_propertiesTableContent
+        ...crystallize_gridRelations
       }
     }
   }
 
   fragment crystallize_product on CRYSTALLIZE_Product {
     id
+    language
     vatType {
       name
       percent
@@ -103,20 +146,19 @@ export const query = graphql`
       id
       name
       sku
-      price
+      priceVariants {
+        price
+        identifier
+        currency
+      }
       stock
       isDefault
       attributes {
         attribute
         value
       }
-      image {
-        url
-        altText
-        variants {
-          url
-          width
-        }
+      images {
+        ...crystallize_image
       }
       subscriptionPlans {
         id
