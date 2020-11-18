@@ -5,16 +5,6 @@ import { responsive } from "ui"
 
 export const Outer = styled.header`
   text-align: center;
-<<<<<<< HEAD
-  padding: 10px 25px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  max-width: 1500px;
-  margin: 0 auto 10px;
-  ${responsive.xs} {
-    flex-direction: column;
-=======
   padding: 20px 75px;
   max-width: 1600px;
   display: flex;
@@ -26,7 +16,6 @@ export const Outer = styled.header`
     padding: 10px 90px 10px 20px;
     justify-content: space-between;
     position: relative;
->>>>>>> upstream/main
   }
 `
 
@@ -103,12 +92,9 @@ export const NavListItem = styled.li`
     display: inline-block;
     padding: 10px 10px;
     transition: all 100ms;
-<<<<<<< HEAD
-=======
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
->>>>>>> upstream/main
     &:hover {
       text-decoration: underline;
     }

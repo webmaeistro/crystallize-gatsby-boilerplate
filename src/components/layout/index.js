@@ -16,7 +16,6 @@ const Layout = ({ headerItems, children, title }) => {
   const t = useT()
 
   return (
-<<<<<<< HEAD
     <IntlProvider locale="nb">
       <SEO title={title} /> <Header headerItems={headerItems} />{" "}
       <main> {children} </main>{" "}
@@ -32,33 +31,6 @@ const Layout = ({ headerItems, children, title }) => {
         </Outer>{" "}
       </footer>{" "}
     </IntlProvider>
-=======
-    <>
-      <GlobalStyle />
-      <SEO title={title} />
-      <Header headerItems={headerItems} />
-      <main>{children}</main>
-      <footer style={{ margin: "4rem 0 2rem", textAlign: "center" }}>
-        <Outer>
-          <span
-            dangerouslySetInnerHTML={{
-              __html: t("layout.builtWith", {
-                link: `<a href="https://www.gatsbyjs.org">Gatsby</a>`,
-              }),
-            }}
-          />
-          {` `}|{` `}
-          <span
-            dangerouslySetInnerHTML={{
-              __html: t("layout.poweredBy", {
-                link: `<a href="https://www.crystallize.com">Crystallize</a>`,
-              }),
-            }}
-          />
-        </Outer>
-      </footer>
-    </>
->>>>>>> upstream/main
   )
 }
 

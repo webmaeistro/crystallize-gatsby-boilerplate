@@ -62,15 +62,6 @@ export default function FolderPage(props) {
           <H1>{folder.name}</H1>
           <ShapeComponents components={[summary]} />
         </Header>
-<<<<<<< HEAD
-        {children && (
-          <List>
-            {children.map((child) => (
-              <Product data={child} key={child.id} />
-            ))}
-          </List>
-        )}
-=======
         {gridRelations?.length > 0
           ? gridRelations?.map((grid, index) => (
               <Grid
@@ -88,7 +79,6 @@ export default function FolderPage(props) {
                 ))}
               </List>
             )}
->>>>>>> upstream/main
       </Outer>
     </Layout>
   )

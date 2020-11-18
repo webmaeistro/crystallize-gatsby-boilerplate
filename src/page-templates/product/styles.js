@@ -77,55 +77,19 @@ export const Media = styled.div`
   position: relative;
   padding: 3rem;
   ${responsive.mdAndLess} {
-<<<<<<< HEAD
-    flex-basis: 55%;
-  }
-
-  &:before {
-    content: "";
-    width: 80%;
-    height: 20px;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-=======
     display: block;
     padding: 0;
     margin-bottom: 2em;
->>>>>>> upstream/main
   }
 `
 
 export const MediaInner = styled.div`
-<<<<<<< HEAD
-  width: 100%;
-  max-width: 550px;
-  height: 100%;
-  min-height: 214px;
-
-  position: absolute;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 0;
-  left: 0;
-  padding: 0.1rem;
-=======
   ${responsive.mdAndLess} {
     margin: 2em;
   }
->>>>>>> upstream/main
 
   img {
     object-fit: contain;
-<<<<<<< HEAD
-    z-index: 10;
-    top: 0;
-    height: 100%;
-    min-height: 214px;
-=======
     max-height: 80vh;
     width: 100%;
     height: 100%;
@@ -133,7 +97,6 @@ export const MediaInner = styled.div`
     ${responsive.mdAndLess} {
       max-height: 40vh;
     }
->>>>>>> upstream/main
   }
 `
 
@@ -176,11 +139,7 @@ export const ProductFooter = styled.div`
 
 export const Price = styled.div`
   text-align: center;
-<<<<<<< HEAD
-  color: black;
-=======
   color: var(--color-text-sub);
->>>>>>> upstream/main
   font-size: 30px;
   margin: 20px;
   margin-left: 0;

@@ -240,11 +240,7 @@ fragment paragraphCollection on ParagraphCollectionContent {
 }
 ```
 
-<<<<<<< HEAD
 We use the `src/` directory to hold the actual entry pages
-=======
-We use the `src/page-templates/` directory to hold the actual entry pages
->>>>>>> upstream/main
 related to query result in `gatsby-node.js`.
 
 Styled components and UI.

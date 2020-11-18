@@ -67,12 +67,5 @@ yarn-error.log
 .pnp.js
 # Yarn Integrity file
 .yarn-integrity
-<<<<<<< HEAD
-
-.now
-# Local Netlify folder
-.netlify
-=======
 # Yarn lock file
 yarn.lock
->>>>>>> upstream/main

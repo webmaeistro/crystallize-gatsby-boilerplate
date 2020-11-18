@@ -3,22 +3,12 @@ import { Image } from "@crystallize/react-image"
 import ContentTransformer from "ui/content-transformer"
 
 import { graphql } from "gatsby"
-<<<<<<< HEAD
-//Button
-import { H1, H2, screen, Outer } from "ui"
-import CategoryItem from "components/category-item"
-import { CurrencyValue } from "components/currency-value"
-import VariantSelector from "components/variant-selector"
-import ShapeComponents from "components/shape-components"
-import { attributesToObject } from "../../../utils/variants"
-=======
 import Buy from "./buy"
 
 import { screen } from "ui"
 import VariantSelector from "components/variant-selector"
 import ShapeComponents from "components/shape-components"
 import { useT } from "lib/i18n"
->>>>>>> upstream/main
 
 import Layout from "components/layout"
 
@@ -38,31 +28,7 @@ import {
 const ProductPage = ({ product, defaultVariant }) => {
   const [selectedVariant, setSelectedVariant] = useState(defaultVariant)
 
-<<<<<<< HEAD
-  const onAttributeChange = (attributes, newAttribute) => {
-    const newAttributes = attributesToObject(attributes)
-    newAttributes[newAttribute.attribute] = newAttribute.value
-
-    const newSelectedVariant = product.variants.find((variant) => {
-      const variantAttributes = attributesToObject(variant.attributes)
-      return isEqual(variantAttributes, newAttributes)
-    })
-
-    setSelectedVariant(newSelectedVariant)
-  }
-
   const onVariantChange = (variant) => setSelectedVariant(variant)
-
-  // const order = async () => {
-  // console.log("todo: order")
-  //  }
-
-  const summaryComponent = product.components.find((c) => c.name === "Summary")
-  const description = product.components.find((c) => c.name === "Description")
-  const { topics } = product
-=======
-  const onVariantChange = (variant) => setSelectedVariant(variant)
->>>>>>> upstream/main
 
   const summaryComponent = product.components.find((c) => c.name === "Summary")
   const descriptionComponent = product.components?.find(
@@ -75,19 +41,9 @@ const ProductPage = ({ product, defaultVariant }) => {
       <Sections>
         <Media>
           <MediaInner>
-<<<<<<< HEAD
-            <Img
-              src={selectedVariantImg || placeHolderImg}
-              onError={(e) => {
-                e.target.onerror = null
-                e.target.src = placeHolderImg
-              }}
-              sizes={`(max-height: ${screen.sm}px) 400px, 600px`}
-=======
             <Image
               {...selectedVariant.images?.[0]}
               sizes={`(max-width: ${screen.sm}px) 400px, 60vw`}
->>>>>>> upstream/main
               alt={product.name}
             />
           </MediaInner>
@@ -108,27 +64,7 @@ const ProductPage = ({ product, defaultVariant }) => {
             />
           )}
 
-<<<<<<< HEAD
-          <ProductFooter>
-            <Price>
-              <strong>
-                Kr.
-                <CurrencyValue value={selectedVariant.price} />
-                ,-
-              </strong>
-            </Price>
-            <br />
-            {` `}{" "}
-            <a href="/bestill">
-              {" "}
-              <u>Bestill nå! </u>{" "}
-            </a>{" "}
-            {` `}
-            {/*  <Button onClick={order}>Bestill nå</Button> */}
-          </ProductFooter>
-=======
           <Buy product={product} selectedVariant={selectedVariant} />
->>>>>>> upstream/main
         </Info>
       </Sections>
       <Content>
@@ -149,11 +85,7 @@ const ProductPage = ({ product, defaultVariant }) => {
 
       {/* {topics && topics.length && (
         <RelatedTopics>
-<<<<<<< HEAD
-          <H2>Kanskje du også liker</H2>
-=======
           <H2>{t("common.related")}</H2>
->>>>>>> upstream/main
 
           {topics.map((topic) => {
             // We only want to show the first 4 products for a topic
@@ -173,11 +105,7 @@ const ProductPage = ({ product, defaultVariant }) => {
                 <TopicTitle>{topic.name}</TopicTitle>
                 <List>
                   {cells.map((cell) => (
-<<<<<<< HEAD
-                    <CategoryItem data={cell.item} key={cell.id} />
-=======
                     <CategoryItem data={cell.item} key={cell.item.id} />
->>>>>>> upstream/main
                   ))}
                 </List>
               </TopicMap>
@@ -194,14 +122,8 @@ const ProductPageDataLoader = ({ data: { crystallize } }) => {
   const { product } = crystallize
   const headerItems = crystallize.headerItems?.children
   const defaultVariant = product.variants?.find((v) => v.isDefault)
-<<<<<<< HEAD
-
-  if (!defaultVariant) {
-    return <Layout headerItems={headerItems}>Finnes ingen varianter</Layout>
-=======
   if (!defaultVariant) {
     return <Layout headerItems={headerItems}>{t("product.noVariants")}</Layout>
->>>>>>> upstream/main
   }
 
   return (
@@ -227,15 +149,11 @@ export const query = graphql`
           language
         }
       }
-<<<<<<< HEAD
-      product: catalogue(language: "en", path: $path) {
-=======
 
       product: catalogue(
         language: $crystallizeCatalogueLanguage
         path: $cataloguePath
       ) {
->>>>>>> upstream/main
         ...crystallize_item
         ...crystallize_product
         topics {
